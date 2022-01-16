@@ -1,0 +1,237 @@
+@import '_common';
+
+.wrapper {
+position: relative;
+
+  &__bg {
+    position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/img/bg.jpg') center 0 / cover no-repeat;
+  }
+}
+.content {
+  
+  overflow: hidden;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 100px 20px 50px;
+  @media (max-width: 992px) {
+    padding: 50px 20px 30px;
+  }
+}
+
+h1 {
+  font: 900 5rem/8rem 'Overpass';
+  max-width: 900px;
+  color: #faed26;
+  text-align: end;
+  margin-bottom: 100px;
+  text-transform: uppercase;
+  @media (max-width: 992px) {
+    font: 900 3rem/4rem 'Overpass';
+    max-width: 500px;
+    margin-bottom: 30px;
+  }
+}
+
+h2 {
+  font: 700 2rem/2rem 'Overpass';
+  text-align: center;
+  color: #9b786f;
+  
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+._anim-show {
+  transform: translate(0px, 120px);
+  opacity: 0;
+  transition: all 1.2s ease 0s;
+}
+._anim-show._active,
+._active ._anim-show {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+
+.block0 {
+  min-height: 100vh;
+  display: flex;
+  
+  &__container {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100px;
+  }
+    &__title {
+      transform: translate(0px, 150px);
+      opacity: 0;
+      transition: all 0.8s ease 0s;
+    }
+    
+    &__title._active {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+
+    &__text {
+      font: 700 2rem/3rem 'Overpass';
+      max-width: 1600px;
+      color: #ffffff;
+      text-align: end;
+      text-transform: uppercase;
+
+      transform: translate(0px, 100px);
+      opacity: 0;
+      transition: all 0.8s ease 0.4s;
+
+      @media (max-width: 992px) {
+        font: 700 1rem/2rem 'Overpass';
+        max-width: 400px;
+      }
+    }
+
+    &__text._active {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+ 
+}
+
+.block1 {
+  background-color: #46344e;
+  margin-bottom: 300px;
+
+  &__item {
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+}
+
+.block2 {
+  background-color: #5a5560;
+  margin-bottom: 300px;
+  &__container {
+   
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__item {
+    text-align: center;
+    max-width: 450px;
+    padding: 10px;
+  }
+
+  &__item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+    transform: scale(0);
+    transition: all 0.8s ease 0s;
+    
+    img {
+      display: block;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+  }
+
+  &__item._active &__item-img{
+    transform: scale(1);
+    
+  }
+
+  &__item-text {
+    transform: translate(0px, 50%);
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__item._active &__item-text {
+    transform: translate(0px, 0%);
+    opacity: 1;
+    transition: all 0.8s ease 0.6s;
+  }
+}
+
+
+.block3 {
+  background-color: #9b786f;
+  h2 {
+    color: #3a333d;
+  }
+  &__container {
+    color: #46344e;
+  }
+
+  &__list-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    overflow: hidden;
+
+    transform: translate(-120%, 0%);
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__list._active  &__list-item{
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+
+  &__list._active  &__list-item:nth-child(1){
+    transition: all 0.8s ease 0s;
+  }
+  &__list._active  &__list-item:nth-child(2){
+    transition: all 0.8s ease 0.3s;
+  }
+  &__list._active  &__list-item:nth-child(3){
+    transition: all 0.8s ease 0.6s;
+  }
+  &__list._active  &__list-item:nth-child(4){
+    transition: all 0.8s ease 0.9s;
+  }
+  &__list._active  &__list-item:nth-child(5){
+    transition: all 0.8s ease 1.2s;
+  }
+
+  &__list-item::before {
+    content:'';
+    position: absolute;
+    background-color: #3a333d;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 5px;
+    margin-left: -40px;
+    margin-bottom: 20px;
+  }
+
+  
+}
+
